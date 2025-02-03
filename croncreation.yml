@@ -14,8 +14,8 @@
       month: "*"
       weekday: "*"
       job: /tmp/test.sh
-      user: ansible
-      
+      state: absent
+
 
 
 

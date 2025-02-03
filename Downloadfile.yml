@@ -1,0 +1,12 @@
+---
+ - name: download file from net 
+   hosts: vm_server 
+   gather_facts: yes 
+
+   tasks: 
+    - name: downloding file
+      get_url:
+        url: https://www.python.org/ftp/python/3.12.8/Python-3.12.8.tgz
+        dest: /tmp
+        mode: 0777
+        state: absent

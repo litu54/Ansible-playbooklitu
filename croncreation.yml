@@ -1,0 +1,22 @@
+---
+- name: setting up cron 
+  hosts: vm_server 
+  gather_facts: yes
+  become: yes 
+
+  tasks:
+  - name: Add cron set up 
+    cron: 
+      name: Run test script
+      minute: "*"
+      hour: "*"
+      day: "*"
+      month: "*"
+      weekday: "*"
+      job: /tmp/test.sh
+      user: ansible
+      
+
+
+
+ 

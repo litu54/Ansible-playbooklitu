@@ -1,0 +1,9 @@
+---
+- name: Run script 
+  hosts: vm_server 
+  gather_facts: yes 
+  become: yes 
+   
+  tasks: 
+   - name: Run script 
+     shell: /tmp/test.sh 

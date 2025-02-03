@@ -1,0 +1,17 @@
+---
+- name: Install and start the services
+  hosts: vm_server
+  gather_facts: yes
+  become: yes
+
+  tasks:
+    - name: Installing nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Starting the Nginx service
+      service:
+        name: nginx
+        state: started
+        enabled: true

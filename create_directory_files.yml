@@ -1,0 +1,10 @@
+---
+  - name: creating a file under directory
+    hosts: vm_server 
+    gather_facts: yes
+    become: yes
+    tasks:
+       - name: create a helloworld.txt file /tmp
+         file: 
+           name: /tmp/example/hello_world.txt
+           state: touch 

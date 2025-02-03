@@ -1,0 +1,9 @@
+---
+- name: Copying files to remote
+  hosts: vm_server
+
+  tasks:
+  - name: Copy files
+    copy:
+      src: /home/ansible/playbook/myfile.txt
+      dest: /tmp/

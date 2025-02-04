@@ -3,17 +3,19 @@
   hosts: vm_server
   gather_facts: yes
   become: yes
+  vars:
+    - app: httpd
 
   tasks:
     - name: Installing nginx
       apt:
-        name: nginx
+        name: "{{ app }}"
         state: present
       tags: i-nginx  
 
     - name: Starting the Nginx service
       service:
-        name: nginx
+        name: "{{ app }}"
         state: started
         enabled: true
       tags: ss-nginx   

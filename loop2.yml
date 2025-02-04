@@ -1,0 +1,13 @@
+---
+- name: Install and Start the service
+  hosts: all
+  vars:
+    - apps: [apache2,httpd,vim,telnet]
+
+  tasks:
+  - name: Installing nginx
+    apt:
+      name: "{{ item }}"
+      state: present
+    tags: i-nginx
+    with_items: "{{ apps }}"

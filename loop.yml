@@ -1,0 +1,15 @@
+--- 
+- name: user Mgm
+  hosts: vm_server
+  gather_facts: yes  
+
+  tasks: 
+    - name: User creation 
+      user:
+       name: "{{ item }}"
+       comment: new user adding to QA team
+       shell: /bin/bash
+      loop:
+        - Raju
+        - Baburaoo
+        - sham 
